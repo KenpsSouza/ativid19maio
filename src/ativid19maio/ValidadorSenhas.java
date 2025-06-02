@@ -50,10 +50,8 @@ public class ValidadorSenhas {
     }
     
    
-     //Verifica se a senha contém pelo menos uma letra maiúscula
      
     private static boolean verificarLetraMaiuscula(String senha) {
-        // Percorre cada caractere verificando se algum é maiúsculo
         for (char c : senha.toCharArray()) {
             if (Character.isUpperCase(c)) {
                 return true;
@@ -62,10 +60,8 @@ public class ValidadorSenhas {
         return false;
     }
     
-     //Verifica se a senha contém pelo menos um número primo
      
     private static boolean verificarNumeroPrimo(String senha) {
-        // Percorre cada caractere verificando se é um dígito e se é primo
         for (char c : senha.toCharArray()) {
             if (Character.isDigit(c)) {
                 int numero = Character.getNumericValue(c);
@@ -78,20 +74,16 @@ public class ValidadorSenhas {
     }
     
     
-     //Verifica se um número é primo
     
     private static boolean ehPrimo(int numero) {
-        // 0 e 1 não são primos
         if (numero <= 1) {
             return false;
         }
         
-        // 2 e 3 são primos
         if (numero <= 3) {
             return true;
         }
         
-        // Verificar divisibilidade por números até a raiz quadrada
         for (int i = 2; i <= Math.sqrt(numero); i++) {
             if (numero % i == 0) {
                 return false;
@@ -102,13 +94,10 @@ public class ValidadorSenhas {
     }
     
     
-     //Verifica se a senha contém pelo menos um caractere especial
      
     private static boolean verificarCaractereEspecial(String senha) {
-        // Caracteres especiais comuns
         String caracteresEspeciais = "!@#$%^&*()_+-=[]{}|;:'\",.<>/?`~";
         
-        // Percorre cada caractere verificando se é um caractere especial
         for (char c : senha.toCharArray()) {
             if (caracteresEspeciais.indexOf(c) != -1) {
                 return true;
@@ -118,13 +107,10 @@ public class ValidadorSenhas {
     }
     
     
-     //Verifica se a senha NÃO contém vogais duplicadas seguidas
      
     private static boolean verificarVogaisDuplicadas(String senha) {
-        // Converte para minúsculo para simplificar a verificação
         senha = senha.toLowerCase();
         
-        // Verifica se existe alguma sequência de vogais duplicadas
         if (senha.contains("aa") || senha.contains("ee") || 
             senha.contains("ii") || senha.contains("oo") || 
             senha.contains("uu")) {

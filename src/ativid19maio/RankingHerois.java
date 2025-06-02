@@ -17,7 +17,6 @@ public class RankingHerois {
         
         System.out.println("Olá, vamos observar o Ranking dos Heróis");
         
-        // Definir pesos dos atributos
         System.out.println("\nDefina os pesos para a fórmula de poder:");
         System.out.print("Peso para Força: ");
         double pesoForca = sc.nextDouble();
